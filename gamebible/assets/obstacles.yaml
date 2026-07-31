@@ -1,0 +1,68 @@
+obstacles:
+
+  # --------------------------------------------------
+  # Static Obstacles
+  # --------------------------------------------------
+  - id: wall_panel
+    type: static
+    collider:
+      size: [2.0, 3.0, 0.2]
+    behavior:
+      movement_type: none
+    platform: all
+
+  - id: crate
+    type: static
+    collider:
+      size: [1.0, 1.0, 1.0]
+    behavior:
+      movement_type: none
+    platform: all
+
+
+  # --------------------------------------------------
+  # Moving Obstacles
+  # --------------------------------------------------
+  - id: rotator_slow
+    type: moving
+    collider:
+      size: [1.0, 2.0, 0.2]
+    behavior:
+      movement_type: rotation
+      speed: slow
+      range: 360
+    platform: all
+
+  - id: slider_horizontal
+    type: moving
+    collider:
+      size: [1.0, 1.0, 0.2]
+    behavior:
+      movement_type: slide
+      speed: medium
+      range: 2.0
+    platform: all
+
+  - id: oscillating_barrier
+    type: moving
+    collider:
+      size: [2.0, 0.5, 0.2]
+    behavior:
+      movement_type: oscillate
+      speed: medium
+      range: 1.5
+    platform: all
+
+
+  # --------------------------------------------------
+  # VR‑Specific Obstacles
+  # --------------------------------------------------
+  - id: vr_rising_plate
+    type: moving
+    collider:
+      size: [1.5, 1.5, 0.2]
+    behavior:
+      movement_type: rise
+      speed: medium
+      range: 2.0
+    platform: vr
