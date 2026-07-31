@@ -1,0 +1,97 @@
+targets:
+
+  # --------------------------------------------------
+  # Basic Targets
+  # --------------------------------------------------
+  - id: basic_small
+    type: static
+    size: small
+    collider:
+      radius: 0.35
+      hitbox_tolerance: normal
+    behavior:
+      pattern: none
+    scoring_profile: basic
+    platform: all
+
+  - id: basic_medium
+    type: static
+    size: medium
+    collider:
+      radius: 0.5
+      hitbox_tolerance: normal
+    behavior:
+      pattern: none
+    scoring_profile: basic
+    platform: all
+
+  - id: basic_large
+    type: static
+    size: large
+    collider:
+      radius: 0.75
+      hitbox_tolerance: forgiving
+    behavior:
+      pattern: none
+    scoring_profile: basic
+    platform: all
+
+
+  # --------------------------------------------------
+  # Moving Targets
+  # --------------------------------------------------
+  - id: mover_linear
+    type: moving
+    size: medium
+    collider:
+      radius: 0.5
+      hitbox_tolerance: strict
+    behavior:
+      pattern: linear
+      speed: medium
+      easing: linear
+    scoring_profile: moving
+    platform: all
+
+  - id: mover_zigzag
+    type: moving
+    size: medium
+    collider:
+      radius: 0.5
+      hitbox_tolerance: strict
+    behavior:
+      pattern: zigzag
+      speed: fast
+      easing: ease_in_out
+    scoring_profile: moving
+    platform: all
+
+  - id: mover_jitter
+    type: moving
+    size: small
+    collider:
+      radius: 0.35
+      hitbox_tolerance: strict
+    behavior:
+      pattern: jitter
+      speed: fast
+      easing: linear
+    scoring_profile: precision
+    platform: all
+
+
+  # --------------------------------------------------
+  # VR‑Specific Targets
+  # --------------------------------------------------
+  - id: vr_tracking_target
+    type: moving
+    size: medium
+    collider:
+      radius: 0.5
+      hitbox_tolerance: strict
+    behavior:
+      pattern: smooth
+      speed: medium
+      easing: ease_out
+    scoring_profile: tracking
+    platform: vr
