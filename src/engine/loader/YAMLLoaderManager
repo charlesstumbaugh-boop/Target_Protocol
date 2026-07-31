@@ -1,0 +1,4 @@
+YAMLLoaderManager:
+  load_all()
+  reload(file)
+  get_registry(type)
