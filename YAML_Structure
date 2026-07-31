@@ -1,0 +1,10 @@
+asset:
+  id: unique_name
+  type: target | obstacle | environment | ui | sound
+  platform: mobile | vr | both
+  properties:
+    size: value
+    color: value
+    behavior: value
+    speed: value
+    pattern: value
