@@ -1,0 +1,99 @@
+architecture:
+
+  core_systems:
+    target_manager:
+      description: Handles spawning, updating, and despawning of targets.
+      depends_on: [modes, scoring, feedback]
+      yaml_source: targets.yaml
+
+    obstacle_manager:
+      description: Controls static, moving, and visibility obstacles.
+      depends_on: [modes]
+      yaml_source: obstacles.yaml
+
+    mode_manager:
+      description: Loads mode definitions and configures session rules.
+      depends_on: [targets, obstacles, scoring]
+      yaml_source: modes.yaml
+
+    scoring_manager:
+      description: Calculates scores, accuracy, reaction bonuses, and combos.
+      depends_on: [targets]
+      yaml_source: scoring.yaml
+
+    feedback_manager:
+      description: Triggers visual, audio, and haptic feedback.
+      depends_on: [targets, scoring]
+      yaml_source: none
+
+    session_manager:
+      description: Controls session lifecycle: start → active → end → summary.
+      depends_on: [mode_manager, scoring_manager, feedback_manager]
+      yaml_source: none
+
+  platform_modules:
+    mobile:
+      input: touch
+      rendering: lightweight_3d
+      performance_target: 60fps
+      notes: Flick + reaction modes emphasized.
+
+    vr:
+      input: controller_raycast
+      rendering: immersive_3d
+      performance_target: 90-120fps
+      notes: Tracking + obstacle modes emphasized.
+
+    webgl:
+      input: mouse
+      rendering: lightweight_3d
+      performance_target: 60fps
+      notes: Ideal for testing + precision modes.
+
+  data_layer:
+    yaml_files:
+      - targets.yaml
+      - obstacles.yaml
+      - modes.yaml
+      - scoring.yaml
+      - architecture.yaml
+
+    loading_strategy:
+      parse_on_startup: true
+      hot_reload: false
+      mapping: "YAML → internal structs/classes"
+
+  update_flow:
+    per_frame:
+      - read_input
+      - update_targets
+      - update_obstacles
+      - run_hit_detection
+      - update_scoring
+      - trigger_feedback
+      - check_session_state
+
+  performance:
+    mobile:
+      object_pooling: true
+      max_active_targets: 6
+      max_active_obstacles: 3
+
+    vr:
+      object_pooling: true
+      gpu_optimized_shaders: true
+      culling: aggressive
+      lod: enabled
+
+    webgl:
+      simplified_materials: true
+      reduced_particles: true
+
+  expansion_hooks:
+    future_features:
+      - leaderboards
+      - ghost_runs
+      - environment_themes
+      - cosmetic_skins
+      - vr_physical_obstacles
+      - mobile_simplified_modes
