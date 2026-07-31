@@ -1,0 +1,64 @@
+modes:
+
+  # --------------------------------------------------
+  # Flick Mode
+  # --------------------------------------------------
+  - id: flick
+    name: "Flick"
+    description: "Fast reaction flick shots on static targets."
+    duration_seconds: 60
+    targets:
+      - basic_small
+      - basic_medium
+    obstacles: []
+    scoring_profile: flick
+    platform: all
+
+
+  # --------------------------------------------------
+  # Reaction Mode
+  # --------------------------------------------------
+  - id: reaction
+    name: "Reaction"
+    description: "Targets appear quickly and disappear if not hit."
+    duration_seconds: 60
+    targets:
+      - basic_small
+      - basic_medium
+      - mover_jitter
+    obstacles: []
+    scoring_profile: reaction
+    platform: all
+
+
+  # --------------------------------------------------
+  # Tracking Mode (VR)
+  # --------------------------------------------------
+  - id: tracking
+    name: "Tracking"
+    description: "Follow moving targets with precise aim."
+    duration_seconds: 90
+    targets:
+      - vr_tracking_target
+    obstacles:
+      - vr_rising_plate
+    scoring_profile: tracking
+    platform: vr
+
+
+  # --------------------------------------------------
+  # Mixed Mode
+  # --------------------------------------------------
+  - id: mixed
+    name: "Mixed"
+    description: "Combination of flick, reaction, and moving targets."
+    duration_seconds: 90
+    targets:
+      - basic_small
+      - mover_linear
+      - mover_zigzag
+    obstacles:
+      - rotator_slow
+      - slider_horizontal
+    scoring_profile: mixed
+    platform: all
