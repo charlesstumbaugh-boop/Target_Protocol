@@ -1,0 +1,173 @@
+animations:
+
+  # --------------------------------------------------
+  # Target Animations
+  # --------------------------------------------------
+  target:
+
+    spawn:
+      duration_ms: 150
+      easing: ease_out
+      scale_in:
+        start: 0.0
+        end: 1.0
+      fade_in:
+        start: 0.0
+        end: 1.0
+
+    hit:
+      flash:
+        duration_ms: 80
+        colors:
+          normal: "#FFFFFF"
+          perfect: "#FFD700"
+      spark:
+        duration_ms: 120
+        easing: ease_out
+        size_scale: 1.0
+      shake:
+        enabled: true
+        intensity: 0.05
+        duration_ms: 60
+
+    perfect_hit:
+      slowmo:
+        enabled: true
+        duration_ms: 100
+        time_scale: 0.85
+      reticle_tighten:
+        enabled: true
+        scale: 0.85
+        duration_ms: 120
+
+    despawn:
+      duration_ms: 140
+      easing: ease_in
+      scale_out:
+        start: 1.0
+        end: 0.0
+      fade_out:
+        start: 1.0
+        end: 0.0
+
+
+  # --------------------------------------------------
+  # Obstacle Animations
+  # --------------------------------------------------
+  obstacle:
+
+    rotation:
+      enabled: true
+      speed: medium
+      range_deg: 360
+      easing: linear
+
+    slide:
+      enabled: true
+      speed: medium
+      range_units: 2.0
+      easing: ease_in_out
+
+    oscillate:
+      enabled: true
+      speed: slow
+      range_units: 1.5
+      easing: ease_in_out
+
+    visibility:
+      fade_in:
+        duration_ms: 120
+      fade_out:
+        duration_ms: 120
+
+
+  # --------------------------------------------------
+  # UI Animations
+  # --------------------------------------------------
+  ui:
+
+    button_press:
+      scale:
+        start: 1.0
+        end: 0.92
+      duration_ms: 90
+      easing: ease_out
+
+    menu_transition:
+      fade_in:
+        duration_ms: 180
+      fade_out:
+        duration_ms: 180
+
+    hud_pop:
+      enabled: true
+      scale:
+        start: 1.0
+        end: 1.15
+      duration_ms: 120
+      easing: ease_out
+
+    reticle:
+      dynamic_tighten:
+        enabled: true
+        perfect_hit_scale: 0.85
+        duration_ms: 120
+
+
+  # --------------------------------------------------
+  # Hit Feedback Animations
+  # --------------------------------------------------
+  feedback:
+
+    hit_spark:
+      duration_ms: 120
+      easing: ease_out
+      colors:
+        normal: "#FFFFFF"
+        fast_reaction: "#4DA3FF"
+        perfect: "#FFD700"
+
+    target_flash:
+      duration_ms: 80
+      colors:
+        normal: "#FFFFFF"
+        perfect: "#FFD700"
+
+    screen_shake:
+      mobile_only: true
+      intensity: 0.02
+      duration_ms: 60
+
+    reticle_pulse:
+      enabled: true
+      scale:
+        start: 1.0
+        end: 1.1
+      duration_ms: 100
+
+
+  # --------------------------------------------------
+  # Combo Animations
+  # --------------------------------------------------
+  combo:
+
+    hud_pulse:
+      enabled: true
+      strength: 0.25
+      duration_ms: 140
+
+    gold_outline:
+      enabled: true
+      duration_ms: 1000
+
+    pitch_ramp:
+      enabled: true
+      ramp_amount: 0.05
+
+
+  # --------------------------------------------------
+  # Environment Reactive Animations (VR)
+  # --------------------------------------------------
+  environment:
+
+    reactive_plate
