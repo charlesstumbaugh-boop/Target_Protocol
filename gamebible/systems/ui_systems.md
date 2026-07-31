@@ -268,3 +268,30 @@ Minimalist: white/black/blue
 Tactical: gray/steel/gold
 
 Sci‑fi: neon/cyan/magenta
+
+10. YAML Integration
+UI configuration can be stored in:
+  /assets/ui.yaml
+
+Example:
+  ui:
+  hud:
+    score_position: top_left
+    timer_position: top_right
+    reticle_type: static
+  colors:
+    primary: "#FFFFFF"
+    accent: "#FFD700"
+    
+11. Expansion Hooks
+Future UI features:
+
+Animated HUD transitions
+
+VR gesture-based menus
+
+Custom reticle shapes
+
+Player-created themes
+
+Advanced performance graphs
