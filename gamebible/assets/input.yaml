@@ -1,0 +1,73 @@
+input:
+
+  # --------------------------------------------------
+  # Mobile Input Configuration
+  # --------------------------------------------------
+  mobile:
+    tap:
+      tap_latency_ms: 30          # Time between tap and raycast
+      tap_deadzone_px: 4          # Prevent accidental taps
+    flick:
+      flick_sensitivity: 1.2      # Higher = faster flick recognition
+      flick_min_distance_px: 40   # Minimum swipe distance
+      flick_angle_tolerance_deg: 12
+    drag:
+      drag_sensitivity: 0.8       # Reticle movement speed
+      drag_smoothing: 0.15        # Reduces jitter
+    auto_fire:
+      enabled: false              # Optional accessibility mode
+      fire_delay_ms: 50
+    haptics:
+      hit_strength: light
+      perfect_strength: medium
+      miss_strength: none
+
+
+  # --------------------------------------------------
+  # VR Input Configuration
+  # --------------------------------------------------
+  vr:
+    raycast:
+      raycast_length_m: 100       # Max distance for raycast
+      raycast_width_deg: 0.5      # Tight ray for precision
+      jitter_filter: 0.1          # Smooths controller jitter
+    trigger:
+      trigger_threshold: 0.1      # Minimum pressure to fire
+      trigger_cooldown_ms: 80     # Prevents accidental double-fire
+    two_hand_mode:
+      enabled: false              # Optional stabilization mode
+      stability_bonus: 0.2
+    haptics:
+      hit_strength: medium
+      perfect_strength: strong
+      miss_strength: none
+    spatial_audio:
+      enabled: true               # Hit sounds originate from target
+
+
+  # --------------------------------------------------
+  # WebGL Input Configuration
+  # --------------------------------------------------
+  web:
+    mouse:
+      mouse_sensitivity: 1.0      # Cursor movement multiplier
+      smoothing: 0.1              # Reduces jitter
+    click:
+      click_latency_ms: 20        # Time between click and raycast
+      double_click_prevention_ms: 60
+    feedback:
+      hit_marker_enabled: true
+      haptics_enabled: false      # Browsers do not support haptics
+
+
+  # --------------------------------------------------
+  # Shared Input Settings
+  # --------------------------------------------------
+  shared:
+    input_buffer_ms: 10           # Prevents dropped inputs
+    aim_assist:
+      enabled: false              # No aim assist by default
+      radius_px: 0                # Zero radius = disabled
+    debug:
+      show_raycast: false         # Developer-only visualization
+      log_input_events: false
