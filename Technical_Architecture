@@ -1,0 +1,24 @@
+architecture:
+  core_systems:
+    - target_manager
+    - input_manager
+    - scoring_manager
+    - feedback_manager
+    - mode_manager
+
+  platform_modules:
+    mobile:
+      input: touch
+      rendering: lightweight_3d
+    vr:
+      input: controller_raycast
+      rendering: immersive_3d
+    web:
+      input: mouse
+      rendering: lightweight_3d
+
+  shared_logic:
+    - target_spawning
+    - hit_detection
+    - scoring
+    - movement_patterns
