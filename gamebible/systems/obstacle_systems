@@ -1,0 +1,241 @@
+1. System Overview
+The Obstacle System defines all environmental and mechanical elements that interfere with aiming during gameplay.
+Obstacles increase difficulty, add tactical depth, and create timing‑based challenges without requiring enemies or complex AI.
+
+The system is:
+
+Modular (YAML‑driven)
+
+Cross‑platform (Mobile + VR + WebGL)
+
+Lightweight (performance‑friendly)
+
+Expandable (easy to add new obstacle types)
+
+Obstacles are optional per mode and can be layered with target behaviors.
+
+2. Obstacle Categories
+Obstacles are grouped into three major categories.
+
+2.1 Static Obstacles
+Fixed objects that block line‑of‑sight or restrict aiming angles.
+
+Characteristics:
+
+No movement
+
+Predictable
+
+Used for timing and positioning challenges
+
+Examples:
+
+wall_small
+
+pillar_tall
+
+box_cover
+
+2.2 Moving Obstacles
+Dynamic objects that shift, rotate, or slide, requiring timing and precision.
+
+Characteristics:
+
+Movement patterns defined in YAML
+
+Increase difficulty without overwhelming the player
+
+Ideal for obstacle modes and advanced training
+
+Movement types:
+
+Rotating arms
+
+Sliding barriers
+
+Rising platforms
+
+Oscillating panels
+
+Examples:
+
+arm_rotate
+
+barrier_slide
+
+panel_oscillate
+
+2.3 Visibility Obstacles
+Obstacles that affect how clearly the player can see targets.
+
+Characteristics:
+
+Modify visibility rather than physical blocking
+
+Add tension and realism
+
+Best used sparingly
+
+Effects:
+
+Fog zones
+
+Flickering lights
+
+Dimmed areas
+
+Screen distortion (VR only)
+
+Examples:
+
+fog_zone
+
+flicker_light
+
+dim_area
+
+3. Obstacle Properties
+All obstacles share a common YAML property structure.
+
+3.1 Core Properties
+
+  id: unique identifier
+  size: small | medium | large
+  type: static | moving | visibility
+  color: optional visual theme
+
+3.2 Movement Properties
+
+  movement: rotation | slide | rise | oscillate
+  speed: slow | medium | fast
+  pattern: optional custom path
+
+3.3 Visibility Properties
+
+  effect: reduce_visibility | flicker | dim | distort
+  intensity: low | medium | high
+  duration: optional timed effect
+
+3.4 Platform Overrides
+
+  platform:
+  mobile:
+    intensity: reduced
+  vr:
+    intensity: increased
+    movement_speed: adjusted
+
+4. Obstacle Behaviors
+Obstacle behaviors define how obstacles interact with targets and the player.
+
+4.1 Blocking Behavior
+
+  behavior: block
+  coverage: partial | full
+Blocks shots or line‑of‑sight.
+
+4.2 Movement Behavior
+
+  behavior: move
+  movement: rotation | slide | rise
+  speed: value
+Creates timing challenges.
+
+4.3 Visibility Behavior
+
+  behavior: visibility
+  effect: fog | flicker | dim
+  intensity: value
+Reduces clarity or adds tension.
+
+5. Obstacle Lifecycle
+Obstacles follow a predictable lifecycle:
+
+  spawn → active → interact → despawn (optional)
+5.1 Spawn
+Spawned at mode start or dynamically
+
+Position defined by mode rules
+
+5.2 Active
+Movement and visibility scripts run
+
+Interaction with targets and player occurs
+
+5.3 Despawn
+Optional for dynamic modes
+
+Static obstacles typically persist
+
+6. Obstacle Placement Rules
+Placement is controlled by mode definitions and YAML configuration.
+
+6.1 Placement Types
+Fixed positions
+
+Randomized positions
+
+Pattern‑based placement
+
+Dynamic spawning
+
+6.2 Placement Strategy
+Avoid overwhelming the player
+
+Maintain clear sightlines for beginners
+
+Increase complexity in advanced modes
+
+7. Performance Considerations
+Mobile
+Minimal physics
+
+Simple colliders
+
+Limited simultaneous obstacles
+
+VR
+Optimized movement scripts
+
+Avoid heavy particle effects
+
+Maintain high framerate (90–120Hz)
+
+WebGL
+Reduced shader complexity
+
+Lightweight materials
+
+8. YAML Integration
+Obstacles are defined in:
+  /assets/obstacles.yaml
+
+EXAMPLES:
+moving:
+  - id: arm_rotate
+    movement: rotation
+    speed: slow
+
+visibility:
+  - id: fog_zone
+    effect: reduce_visibility
+    intensity: medium
+The engine loads these definitions at runtime for all platforms.
+
+9. Expansion Hooks
+The Obstacle System supports future additions:
+
+Breakable obstacles
+
+Reactive obstacles (open when hit)
+
+Pattern‑based obstacle waves
+
+VR‑exclusive physical obstacles
+
+Mobile‑exclusive simplified obstacles
+
+
+
+
+
