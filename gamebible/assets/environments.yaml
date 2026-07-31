@@ -1,0 +1,159 @@
+environments:
+
+  # --------------------------------------------------
+  # Minimalist Environments (Mobile + WebGL)
+  # --------------------------------------------------
+
+  - id: minimal_white
+    type: minimalist
+    platform: mobile
+    background_color: "#FFFFFF"
+    lighting_style: flat
+    contrast_level: high
+    performance:
+      shader_quality: low
+      max_particles: 0
+    geometry:
+      walls: false
+      floor: false
+      props: []
+
+  - id: minimal_dark
+    type: minimalist
+    platform: mobile
+    background_color: "#000000"
+    lighting_style: flat
+    contrast_level: high
+    performance:
+      shader_quality: low
+      max_particles: 0
+    geometry:
+      walls: false
+      floor: false
+      props: []
+
+  - id: gradient_blue
+    type: minimalist
+    platform: web
+    background_color: "gradient(#0A1A3F,#1E3A8A)"
+    lighting_style: flat
+    contrast_level: medium
+    performance:
+      shader_quality: low
+      max_particles: 0
+    geometry:
+      walls: false
+      floor: false
+      props: []
+
+
+  # --------------------------------------------------
+  # Tactical Environments (VR)
+  # --------------------------------------------------
+
+  - id: tactical_range
+    type: tactical
+    platform: vr
+    background_color: "#2B2B2B"
+    lighting_style: dynamic
+    contrast_level: high
+    geometry:
+      walls: true
+      floor: true
+      props: ["crates", "barriers", "metal_panels"]
+    audio:
+      spatial: true
+      reverb: light
+    performance:
+      shader_quality: high
+      max_particles: 50
+
+  - id: warehouse_bay
+    type: tactical
+    platform: vr
+    background_color: "#1F1F1F"
+    lighting_style: dynamic
+    contrast_level: medium
+    geometry:
+      walls: true
+      floor: true
+      props: ["crates", "shelves", "hanging_lights"]
+    audio:
+      spatial: true
+      reverb: medium
+    performance:
+      shader_quality: high
+      max_particles: 40
+
+  - id: operator_room
+    type: tactical
+    platform: vr
+    background_color: "#101010"
+    lighting_style: soft
+    contrast_level: high
+    geometry:
+      walls: true
+      floor: true
+      props: ["control_panels", "targets_mounts"]
+    audio:
+      spatial: true
+      reverb: none
+    performance:
+      shader_quality: medium
+      max_particles: 20
+
+
+  # --------------------------------------------------
+  # Sci-Fi / Neon Environments (Mobile + VR)
+  # --------------------------------------------------
+
+  - id: neon_grid
+    type: scifi
+    platform: all
+    background_color: "#000000"
+    lighting_style: dynamic
+    contrast_level: high
+    geometry:
+      walls: false
+      floor: true
+      props: ["neon_lines", "floating_panels"]
+    audio:
+      spatial: false
+      reverb: none
+    performance:
+      shader_quality: medium
+      max_particles: 10
+
+  - id: cyber_arena
+    type: scifi
+    platform: vr
+    background_color: "#0A0A0A"
+    lighting_style: dynamic
+    contrast_level: high
+    geometry:
+      walls: true
+      floor: true
+      props: ["holograms", "floating_targets"]
+    audio:
+      spatial: true
+      reverb: light
+    performance:
+      shader_quality: high
+      max_particles: 30
+
+  - id: holo_chamber
+    type: scifi
+    platform: mobile
+    background_color: "#111111"
+    lighting_style: soft
+    contrast_level: medium
+    geometry:
+      walls: false
+      floor: false
+      props: ["holo_rings"]
+    audio:
+      spatial: false
+      reverb: none
+    performance:
+      shader_quality: low
+      max_particles: 5
