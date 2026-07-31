@@ -1,0 +1,78 @@
+scoring:
+
+  # --------------------------------------------------
+  # Basic Profile
+  # --------------------------------------------------
+  basic:
+    hit_points: 100
+    perfect_bonus: 50
+    fast_reaction_bonus: 25
+    combo_multiplier:
+      start: 3
+      max: 10
+    accuracy_weight: 1.0
+
+
+  # --------------------------------------------------
+  # Moving Target Profile
+  # --------------------------------------------------
+  moving:
+    hit_points: 150
+    perfect_bonus: 75
+    fast_reaction_bonus: 40
+    combo_multiplier:
+      start: 3
+      max: 12
+    accuracy_weight: 1.2
+
+
+  # --------------------------------------------------
+  # Precision Profile
+  # --------------------------------------------------
+  precision:
+    hit_points: 200
+    perfect_bonus: 100
+    fast_reaction_bonus: 50
+    combo_multiplier:
+      start: 4
+      max: 15
+    accuracy_weight: 1.5
+
+
+  # --------------------------------------------------
+  # Reaction Mode Profile
+  # --------------------------------------------------
+  reaction:
+    hit_points: 125
+    perfect_bonus: 50
+    fast_reaction_bonus: 75
+    combo_multiplier:
+      start: 2
+      max: 8
+    accuracy_weight: 1.0
+
+
+  # --------------------------------------------------
+  # Tracking Mode Profile (VR)
+  # --------------------------------------------------
+  tracking:
+    hit_points: 10            # per tick of tracking
+    perfect_bonus: 0
+    fast_reaction_bonus: 0
+    combo_multiplier:
+      start: 0
+      max: 0
+    accuracy_weight: 2.0
+
+
+  # --------------------------------------------------
+  # Mixed Mode Profile
+  # --------------------------------------------------
+  mixed:
+    hit_points: 150
+    perfect_bonus: 75
+    fast_reaction_bonus: 40
+    combo_multiplier:
+      start: 3
+      max: 12
+    accuracy_weight: 1.2
