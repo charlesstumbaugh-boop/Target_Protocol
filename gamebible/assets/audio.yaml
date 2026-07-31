@@ -1,0 +1,86 @@
+audio:
+
+  # --------------------------------------------------
+  # Hit Feedback Audio
+  # --------------------------------------------------
+  hit:
+    normal:
+      file: "hit_normal.wav"
+      volume: 0.8
+      pitch: 1.0
+      spatial: false
+      duration_ms: 90
+
+    fast_reaction:
+      file: "hit_fast.wav"
+      volume: 0.9
+      pitch: 1.2
+      spatial: false
+      duration_ms: 80
+
+    perfect:
+      file: "hit_perfect.wav"
+      volume: 1.0
+      pitch: 0.9
+      spatial: true
+      duration_ms: 120
+
+    miss:
+      file: "miss_soft.wav"
+      volume: 0.4
+      pitch: 0.8
+      spatial: false
+      duration_ms: 70
+
+
+  # --------------------------------------------------
+  # Combo Audio
+  # --------------------------------------------------
+  combo:
+    increase:
+      file: "combo_up.wav"
+      volume: 0.7
+      pitch_ramp_enabled: true
+      ramp_amount: 0.05
+      spatial: false
+      duration_ms: 110
+
+
+  # --------------------------------------------------
+  # UI Audio
+  # --------------------------------------------------
+  ui:
+    click:
+      file: "ui_click.wav"
+      volume: 0.6
+      pitch: 1.0
+      spatial: false
+
+    hover:
+      file: "ui_hover.wav"
+      volume: 0.4
+      pitch: 1.1
+      spatial: false
+
+    menu_open:
+      file: "ui_menu_open.wav"
+      volume: 0.5
+      pitch: 0.9
+      spatial: false
+
+    menu_close:
+      file: "ui_menu_close.wav"
+      volume: 0.5
+      pitch: 0.9
+      spatial: false
+
+
+  # --------------------------------------------------
+  # Ambient Audio (Theme‑Dependent)
+  # --------------------------------------------------
+  ambient:
+
+    minimalist:
+      enabled: false
+
+    tactical:
