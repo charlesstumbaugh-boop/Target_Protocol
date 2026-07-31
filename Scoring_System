@@ -1,0 +1,9 @@
+scoring:
+  base_hit: 100
+  perfect_hit_bonus: 50
+  reaction_bonus:
+    threshold_ms: 200
+    bonus: 75
+  combo:
+    multiplier_start: 3
+    multiplier_max: 10
