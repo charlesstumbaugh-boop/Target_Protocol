@@ -1,0 +1,32 @@
+targets:
+  static:
+    - id: static_basic
+      size: medium
+      behavior: none
+    - id: static_precision
+      size: small
+      behavior: none
+
+  moving:
+    - id: move_linear
+      pattern: linear
+      speed: medium
+    - id: move_zigzag
+      pattern: zigzag
+      speed: fast
+
+  flick:
+    - id: flick_far
+      distance: far
+      spawn_style: alternating_sides
+
+  reactive:
+    - id: reactive_shrink
+      behavior: shrink_over_time
+    - id: reactive_split
+      behavior: split_on_hit
+
+  shielded:
+    - id: shield_rotate
+      shield: rotating
+      open_window: timed
