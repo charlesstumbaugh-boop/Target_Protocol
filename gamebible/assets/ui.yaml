@@ -1,0 +1,78 @@
+ui:
+
+  # --------------------------------------------------
+  # HUD Configuration
+  # --------------------------------------------------
+  hud:
+    score_position: top_left
+    timer_position: top_right
+    combo_position: below_score
+    accuracy_position: below_combo
+    reticle:
+      type: static        # static | dynamic | raycast_endpoint
+      color: "#FFFFFF"
+      size: 1.0
+      dynamic_tighten:
+        enabled: true
+        perfect_hit_scale: 0.85
+        duration_ms: 120
+
+    hit_feedback_overlay:
+      enabled: true
+      color_flash:
+        normal: "#FFFFFF"
+        perfect: "#FFD700"
+        duration_ms: 80
+
+
+  # --------------------------------------------------
+  # Menu & Navigation
+  # --------------------------------------------------
+  menus:
+    main_menu:
+      items: ["Play", "Modes", "Settings", "Themes", "Exit"]
+      layout: vertical
+      spacing_px: 24
+
+    mode_selection:
+      show_target_icons: true
+      show_obstacle_icons: true
+      difficulty_indicators: true
+
+    settings_menu:
+      sections:
+        - input
+        - audio
+        - haptics
+        - themes
+        - accessibility
+
+    theme_selector:
+      themes: ["minimalist", "tactical", "scifi"]
+      preview_enabled: true
+
+
+  # --------------------------------------------------
+  # Session UI
+  # --------------------------------------------------
+  session:
+    pre_session:
+      show_mode_name: true
+      show_description: true
+      show_duration: true
+      show_target_list: true
+      show_obstacle_list: true
+      start_button_label: "Start Session"
+
+    in_session:
+      pause_button_position: top_center
+      pause_menu:
+        items: ["Resume", "Restart", "Exit", "Settings"]
+
+    post_session:
+      show_score: true
+      show_accuracy: true
+      show_reaction_time: true
+      show_fastest_reaction: true
+      show_combo_streak: true
+      show_perfect_hits: true
