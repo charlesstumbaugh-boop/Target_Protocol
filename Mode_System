@@ -1,0 +1,24 @@
+modes:
+  flick:
+    description: Fast directional flick shots
+    difficulty_curve: increasing_distance
+
+  reaction:
+    description: Targets appear briefly
+    difficulty_curve: decreasing_lifespan
+
+  tracking:
+    description: Follow moving target
+    difficulty_curve: increasing_speed
+
+  precision:
+    description: Tiny targets, slow movement
+    difficulty_curve: decreasing_size
+
+  obstacle:
+    description: Targets behind moving cover
+    difficulty_curve: faster_obstacles
+
+  mixed:
+    description: Randomized patterns
+    difficulty_curve: dynamic
