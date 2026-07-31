@@ -1,0 +1,20 @@
+obstacles:
+  static:
+    - id: wall_small
+      size: small
+    - id: pillar_tall
+      size: tall
+
+  moving:
+    - id: arm_rotate
+      movement: rotation
+      speed: slow
+    - id: barrier_slide
+      movement: horizontal
+      speed: medium
+
+  visibility:
+    - id: fog_zone
+      effect: reduce_visibility
+    - id: flicker_light
+      effect: intermittent_visibility
